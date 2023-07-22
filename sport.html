@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <title>Running Shoes</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <a class="navbar-brand" href="#">
+        <img
+          class="imagesize"
+          src="data:image/png;base64,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"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link size" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link size" href="#productSection">Products</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link size" href="#cat">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link size" href="#new">New Arrivals</a>
+          </li>
+          <div>
+            <li class="nav-item">
+              <a class="nav-link size" href="#contact">Contact us</a>
+            </li>
+          </div>
+        </ul>
+      </div>
+      <div class="ml-auto">
+        <p>
+          <a href="#cart">
+            <img
+              class="imagesize1"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_rAHDNw0lQLz9TVz1jKJe2szCuA_WG7E-VQ&usqp=CAU"
+            />
+          </a>
+        </p>
+      </div>
+    </nav>
+    <h1 class="heading mt-4">SPORTSTYLE SHOES</h1>
+
+    <div class="d-flex flex-row justify-content-between">
+      <div class="bg shadow">
+        <img
+          src="https://assets.ajio.com/medias/sys_master/root/20210216/hiF7/602ada67aeb2696981663995/-473Wx593H-460818208-mint-MODEL.jpg"
+          alt="Product 1"
+          class="image"
+        />
+        <h4>GEL-KAYANO 29</h4>
+        <p class="main">
+          The GEL-KAYANO® 29 shoe creates a stable running experience and a more
+          responsive feel underfoot.
+        </p>
+        <p class="main">₹4999</p>
+        <button class="btn btn-primary add-to-cart-btn" data-id="1">
+          Add to Cart
+        </button>
+      </div>
+      <div class="bg shadow">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAabuPdrZ-QMa-VfaVqch-jTDCg8MTqbvawg&usqp=CAU"
+          alt="Product 2"
+          class="image"
+        />
+        <h4>METASPEED EDGE+</h4>
+        <p class="main">
+          The METASPEED™ EDGE+ racing shoes are designed for cadence-style
+          runners who are looking to start fast and finish faster.
+        </p>
+        <p class="main">₹5999</p>
+        <button class="btn btn-primary add-to-cart-btn" data-id="2">
+          Add to Cart
+        </button>
+      </div>
+      <div class="bg shadow">
+        <img
+          src="https://images.vans.com/is/image/VansEU/VN0A38G1P0S-HERO?$PDP-FULL-IMAGE$"
+          alt="Product 3"
+          class="image"
+        />
+        <h4>MAGIC SPEED 2</h4>
+        <p class="main">
+          The MAGIC SPEED™ 2 shoe offers the energy you need to move towards a
+          new personal best.
+        </p>
+        <p class="main">₹6999</p>
+        <button class="btn btn-primary add-to-cart-btn" data-id="1">
+          Add to Cart
+        </button>
+      </div>
+      <div class="bg shadow">
+        <img
+          src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/377012/02/sv01/fnd/EEA/fmt/png/Rise-NITRO-Basketball-Shoes"
+          alt="Product41"
+          class="image"
+        />
+        <h4>GEL-QUANTUM 180 VII</h4>
+        <p class="main">
+          "The GEL-QUANTUM 180™ VII sneaker combines a futuristic shape .
+        </p>
+        <p class="main">₹7999</p>
+        <button class="btn btn-primary add-to-cart-btn" data-id="1">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row justify-content-between">
+      <div class="bg shadow">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/ba410e57-6124-4805-87ff-6b8020e9f345/jordan-series-es-shoes-FDtg9v.png"
+          alt="Product 1"
+          class="image"
+        />
+        <h4>GEL-NIMBUS 25</h4>
+        <p class="main">
+          "The GEL-NIMBUS® 25 shoe's soft cushioning properties help you feel
+          like you're landing on clouds.
+        </p>
+        <p class="main">₹8999</p>
+        <button class="btn btn-primary add-to-cart-btn" data-id="1">
+          Add to Cart
+        </button>
+      </div>
+      <div class="bg shadow">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/1fafd11f-7315-4dea-98f4-d762e999ebfe/air-max-systm-shoes-l4RjXF.png"
+          alt="Product 2"
+          class="image"
+        />
+        <h4>GEL-KINSEI BLAST</h4>
+        <p class="main">
+          The Gel-Kinsei Blast Shoes Are Designed For Distance Runners Seeking A
+          Smooth Stride. .
+        </p>
+        <p class="main">₹9999</p>
+        <button class="btn btn-primary add-to-cart-btn" data-id="2">
+          Add to Cart
+        </button>
+      </div>
+      <div class="bg shadow">
+        <img
+          src="https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/180aaeca-4484-42cc-9483-6ebf7060babb/jumpman-two-trey-mens-shoes-bGfWN1.png"
+          alt="Product 3"
+          class="image"
+        />
+        <h4>GEL-KINSEI BLAST LE 2</h4>
+        <p class="main">
+          The Gel-Kinsei Blast Shoes Are Designed For Distance Runners Seeking A
+          Smooth Stride.
+        </p>
+        <p class="main">₹9599</p>
+        <button class="btn btn-primary add-to-cart-btn" data-id="1">
+          Add to Cart
+        </button>
+      </div>
+      <div class="bg shadow">
+        <img
+          src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/d858287a-d718-482e-804b-3bff435113d5/air-max-pulse-shoes-QShhG8.png"
+          alt="Product41"
+          class="image"
+        />
+        <h4>SOLUTION SWIFT FF</h4>
+        <p class="main">
+          The Fastest Model In The Asics Tennis Range, Our Solution Speed Ff 2
+          Shoe Is All About Helping Players Expand Their Territory On The Court.
+        </p>
+        <p class="main">₹9799</p>
+        <button class="btn btn-primary add-to-cart-btn" data-id="1">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+
+    <h1 class="follow-us-section-heading mx-5">Follow Us</h1>
+
+    <div class="d-flex flex-row justify-content-center">
+      <div class="follow-us-icon-container">
+        <i class="clr fab fa-twitter icon"></i>
+      </div>
+      <div class="follow-us-icon-container">
+        <i class="clr fab fa-instagram icon"></i>
+      </div>
+      <div class="follow-us-icon-container">
+        <i class="clr fab fa-facebook icon"></i>
+      </div>
+    </div>
+
+    <div id="contact" class="footer-section pt-5 pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB2KOs-7ZNvx0n5c4MyoLgA_JKDOVcxhUqaSDBoknojS8mdx5VOY3TEZcBKWWEK-K2h3k&usqp=CAU"
+              class="imagesize"
+            />
+            <h1 class="footer-section-mail-id">chaithushoemart@.com</h1>
+            <p class="footer-section-address">
+              147 COLLAGE CIRCLE, KADIRI, INDIA.
+            </p>
+            <p class="footer-section-address">
+              Contact details: 7995489155
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/20c5629a29.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
